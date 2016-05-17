@@ -12,21 +12,21 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Credit Card Helper"
+        android:text="@string/textView"
         android:id="@+id/textView"
-        android:layout_alignParentTop="true"
         android:layout_alignParentStart="true"
         android:background="#0404fa"
         android:textColor="#fc0303"
         android:layout_alignEnd="@+id/linearLayout"
-        android:layout_centerInParent="true"
-        android:gravity="center_horizontal" />
+        android:gravity="center_horizontal"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentTop="true" />
 
     <TableLayout
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/textView"
-        android:layout_alignParentStart="true"
+        android:layout_alignParentStart="false"
         android:id="@+id/linearLayout"
         android:orientation="horizontal">
 
@@ -38,9 +38,8 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Enter Card Balance ($) "
-                android:id="@+id/textView_cb"
-                android:layout_alignParentStart="true" />
+                android:text="@string/textView_cb"
+                android:id="@+id/textView_cb" />
 
             <EditText
                 android:layout_width="wrap_content"
@@ -48,8 +47,10 @@
                 android:inputType="numberDecimal"
                 android:ems="10"
                 android:id="@+id/editText_cb"
-                android:layout_toEndOf="@+id/textView_cb"
-                android:layout_weight="1" />
+                android:layout_weight="1"
+                android:numeric="decimal"
+                android:textAlignment="textEnd"
+                android:text="0" />
         </TableRow>
 
         <TableRow
@@ -59,10 +60,8 @@
         <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Enter Yearly Interest Rate (%)"
-                android:id="@+id/textView_eyi"
-                android:layout_below="@+id/textView_cb"
-                android:layout_alignParentStart="true" />
+                android:text="@string/textView_eyi"
+                android:id="@+id/textView_eyi" />
 
             <EditText
                 android:layout_width="wrap_content"
@@ -70,8 +69,9 @@
                 android:inputType="numberDecimal"
                 android:ems="10"
                 android:id="@+id/editText_eyi"
-                android:layout_toEndOf="@+id/textView_eyi"
-                android:layout_weight="1" />
+                android:layout_weight="1"
+                android:textAlignment="textEnd"
+                android:text="0" />
         </TableRow>
 
         <TableRow
@@ -81,19 +81,18 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Enter Minimum Payment ($)"
-                android:id="@+id/textView_emp"
-                android:layout_below="@+id/textView_eyi"
-                android:layout_alignParentStart="true" />
+                android:text="@string/textView_emp"
+                android:id="@+id/textView_emp" />
 
             <EditText
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:inputType="number"
+                android:inputType="numberDecimal"
                 android:ems="10"
                 android:id="@+id/editText_emp"
-                android:layout_toEndOf="@+id/textView_emp"
-                android:layout_weight="1" />
+                android:layout_weight="1"
+                android:text="0"
+                android:textAlignment="textEnd" />
         </TableRow>
 
         <TableRow
@@ -103,10 +102,9 @@
         <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Final Card Balance ($)"
+                android:text="@string/txtView_fcb"
                 android:id="@+id/textView_fcb"
-                android:layout_below="@+id/textView_emp"
-                android:layout_alignParentStart="true" />
+            android:singleLine="true" />
 
             <EditText
                 android:layout_width="wrap_content"
@@ -114,8 +112,12 @@
                 android:inputType="numberDecimal"
                 android:ems="10"
                 android:id="@+id/editText_fcb"
-                android:layout_toEndOf="@+id/textView_fcb"
-                android:layout_weight="1" />
+                android:layout_weight="1"
+                android:text="0"
+                android:textAlignment="textEnd"
+                android:editable="false"
+                android:enabled="false" />
+
         </TableRow>
 
         <TableRow
@@ -125,10 +127,8 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Months Remaining"
-                android:id="@+id/textView_mr"
-                android:layout_below="@+id/textView_fcb"
-                android:layout_alignParentStart="true" />
+                android:text="@string/txtView_mr"
+                android:id="@+id/textView_mr" />
 
             <EditText
                 android:layout_width="wrap_content"
@@ -136,8 +136,12 @@
                 android:inputType="number"
                 android:ems="10"
                 android:id="@+id/editText_mr"
-                android:layout_toEndOf="@+id/textView_mr"
-                android:layout_weight="1" />
+                android:layout_weight="1"
+                android:text="0"
+                android:textAlignment="textEnd"
+                android:editable="false"
+                android:enabled="false" />
+
         </TableRow>
 
         <TableRow
@@ -147,10 +151,11 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Interest Paid will be ($)"
+                android:text="@string/txtView_ip"
                 android:id="@+id/textView_ip"
-                android:layout_below="@+id/textView_mr"
-                android:layout_alignParentStart="true" />
+                android:layout_below="@+id/linearLayout"
+                android:layout_alignParentStart="true"
+                android:layout_column="0" />
 
             <EditText
                 android:layout_width="wrap_content"
@@ -158,8 +163,12 @@
                 android:inputType="numberDecimal"
                 android:ems="10"
                 android:id="@+id/editText_ip"
-                android:layout_toEndOf="@+id/textView_ip"
-                android:layout_weight="1" />
+                android:layout_weight="1"
+                android:text="0"
+                android:textAlignment="textEnd"
+                android:editable="false"
+                android:enabled="false" />
+
         </TableRow>
 
 
@@ -168,20 +177,22 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Compute"
+        android:text="@string/button_cmp"
         android:id="@+id/button_cmp"
         android:layout_below="@+id/linearLayout"
         android:layout_alignParentStart="true"
         android:layout_marginTop="34dp"
-        android:layout_alignEnd="@+id/linearLayout" />
+        android:layout_alignEnd="@+id/linearLayout"
+        android:onClick="Compute" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Clear"
+        android:text="@string/button_clr"
         android:id="@+id/button_clr"
         android:layout_below="@+id/button_cmp"
         android:layout_alignParentStart="true"
-        android:layout_alignEnd="@+id/button_cmp" />
+        android:layout_alignEnd="@+id/button_cmp"
+        android:onClick="Clear" />
 
 </RelativeLayout>

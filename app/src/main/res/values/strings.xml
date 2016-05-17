@@ -1,3 +1,12 @@
 <resources>
     <string name="app_name">MyApp_CreditCard</string>
+    <string name="textView">Credit Card Helper</string>
+    <string name="button_cmp">Compute</string>
+    <string name="button_clr">Clear</string>
+    <string name="textView_cb">Enter Card Balance ($)</string>
+    <string name="textView_eyi">Enter Yearly Interest Rate (%)</string>
+    <string name="textView_emp">Enter Minimum Payment ($)</string>
+    <string name="txtView_fcb">Final Card Balance ($)</string>
+    <string name="txtView_mr">Months Remaining</string>
+    <string name="txtView_ip">Interest Paid will be ($)</string>
 </resources>
